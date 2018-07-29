@@ -19,6 +19,11 @@ namespace OOPFinalProject.BL
            // Rectangle rect = new Rectangle(x, y, width, height);
         }
 
+        public CircleShape()
+        {
+
+        }
+
         private int _x;
 
         public int X

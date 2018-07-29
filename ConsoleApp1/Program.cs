@@ -1,4 +1,5 @@
-﻿using OOPFinalProject.BL;
+﻿using Data1;
+using OOPFinalProject.BL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,9 +76,17 @@ namespace ConsoleApp1
              
 
 
+
             Console.WriteLine("Number of Entities in DrawingShapes List of Rectangles =" + drawingShapes1.GetListofRectangles.Count);
             Console.WriteLine("Number of Entities in DrawingShapes List of Circles =" + drawingShapes1.GetListofCircles.Count);
 
+
+            DataList dataList = new DataList(drawingShapes1);
+            dataList.SerializeIt();
+
+            dataList.DeserializeIt();
+
+            
 
             //Console.WriteLine($"The Rectangle info is: {rect2.X}, {rect2.Y}, {rect2.Width}, {rect2.Height}");
 

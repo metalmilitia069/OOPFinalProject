@@ -20,6 +20,11 @@ namespace OOPFinalProject.BL
            // Rectangle rect = new Rectangle(x, y, width, height);
         }
 
+        public RectangleShape()
+        {
+
+        }
+
         private int _x;
 
         public int X
