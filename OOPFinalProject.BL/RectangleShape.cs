@@ -17,7 +17,6 @@ namespace OOPFinalProject.BL
             _y = y;
             _width = width;
             _height = height;
-           // Rectangle rect = new Rectangle(x, y, width, height);
         }
 
         public RectangleShape()

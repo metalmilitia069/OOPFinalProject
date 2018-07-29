@@ -45,7 +45,6 @@
     <Compile Include="DrawingShapes.cs" />
     <Compile Include="IColor.cs" />
     <Compile Include="IDraw.cs" />
-    <Compile Include="IListofObjects.cs" />
     <Compile Include="ListofObjects.cs" />
     <Compile Include="RectangleShape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -11,7 +11,7 @@ using System.Xml.Serialization;
 namespace Data1
 {
     [Serializable]
-    public class DataList //: IListofShapes
+    public class DataList
     {
         public List<ListofObjects> listOfObjects = new List<ListofObjects>();
         
