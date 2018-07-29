@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace OOPFinalProject.BL
 {
     [Serializable]
-    public class RectangleShape : IListofObjects
+    public class RectangleShape : ListofObjects
     {   
         public RectangleShape(int x, int y, int width, int height)
         {

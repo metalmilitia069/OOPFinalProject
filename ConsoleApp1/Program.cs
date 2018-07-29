@@ -82,11 +82,31 @@ namespace ConsoleApp1
 
 
             DataList dataList = new DataList(drawingShapes1);
+
+
             dataList.SerializeIt();
+
+            dataList.listinha = null;
+
+            Console.WriteLine("lalalala");
+
+            //Console.WriteLine("Antes do Deserialize >>> " + dataList.listinha.ElementAt(0));
 
             dataList.DeserializeIt();
 
-            
+            foreach(var item in dataList.listinha)
+            {
+                if(item is RectangleShape rec)
+                {
+                    Console.WriteLine($"This Rectangle Shape has Width =  {rec.Width}");
+                }
+                if(item is CircleShape cU)
+                {
+                    Console.WriteLine($"This Circle Shape has Radius =  {cU.Radius1}");
+                }
+            }
+
+            //Console.WriteLine("Depois do Deserialize >>> " + dataList.listinha.ElementAt(0)); 
 
             //Console.WriteLine($"The Rectangle info is: {rect2.X}, {rect2.Y}, {rect2.Width}, {rect2.Height}");
 

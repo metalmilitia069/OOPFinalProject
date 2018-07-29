@@ -17,6 +17,8 @@ namespace Data1
         List<CircleShape> circList = new List<CircleShape>();
         DrawingShapes FromDrawingToDataList;
         List<IListofObjects> listofObjects = new List<IListofObjects>();
+
+        public List<ListofObjects> listinha = new List<ListofObjects>();
         
 
         public DataList(DrawingShapes drawing)
@@ -25,11 +27,13 @@ namespace Data1
             {
                 listofObjects.Add(item);
                 recList.Add(item);
+                listinha.Add(item);
             }
             foreach(var item in drawing.GetListofCircles)
             {
                 listofObjects.Add(item);
                 circList.Add(item);
+                listinha.Add(item);
             }
             //foreach(var item in list)
             //{
@@ -44,6 +48,18 @@ namespace Data1
 
             //}
         }
+
+        //[XmlInclude(typeof(BankPayment))]
+        //[Serializable]
+        //public abstract class Payment { }
+
+        //[Serializable]
+        //public class BankPayment : Payment { }
+
+        //[Serializable]
+        //public class Payments : List<Payment> { }
+
+        //XmlSerializer serializer = new XmlSerializer(typeof(Payments), new Type[] { typeof(Payment) });
 
         public void SerializeIt()
         {
@@ -60,15 +76,16 @@ namespace Data1
 
             using (Stream filestreamofContacts1 = new FileStream(@".\ListofShapes.xml", FileMode.Create, FileAccess.Write, FileShare.None))
             {
-                XmlSerializer serializer1 = new XmlSerializer(typeof(List<RectangleShape>));
-                serializer1.Serialize(filestreamofContacts1, recList);
+                XmlSerializer serializer1 = new XmlSerializer(typeof(List<ListofObjects>));
+                //XmlSerializer serializer1 = new XmlSerializer(typeof(ListofObjects), new Type[] { typeof(ListofObjects) });
+                serializer1.Serialize(filestreamofContacts1, listinha);
             }
 
-            using (Stream filestreamofContacts1 = new FileStream(@".\ListofShapes.xml", FileMode.Append, FileAccess.Write, FileShare.None))
-            {
-                XmlSerializer serializer1 = new XmlSerializer(typeof(List<CircleShape>));
-                serializer1.Serialize(filestreamofContacts1, circList);
-            }
+            //using (Stream filestreamofContacts1 = new FileStream(@".\ListofShapes.xml", FileMode.Append, FileAccess.Write, FileShare.None))
+            //{
+            //    XmlSerializer serializer1 = new XmlSerializer(typeof(List<CircleShape>));
+            //    serializer1.Serialize(filestreamofContacts1, circList);
+            //}
 
 
         }
@@ -77,10 +94,11 @@ namespace Data1
         {
             if (@".\ListofShapes.xml" != null)
             {
-                XmlSerializer serializer2 = new XmlSerializer(typeof(List<RectangleShape>));
+                XmlSerializer serializer2 = new XmlSerializer(typeof(List<ListofObjects>));
                 using (FileStream filestreamofContacts = File.OpenRead(@".\ListofShapes.xml"))
                 {
-                    recList = (List<RectangleShape>)serializer2.Deserialize(filestreamofContacts);
+                    //recList = (List<RectangleShape>)serializer2.Deserialize(filestreamofContacts);
+                    listinha = (List<ListofObjects>)serializer2.Deserialize(filestreamofContacts);
                 }
 
                 //foreach (RectangleShape p in )

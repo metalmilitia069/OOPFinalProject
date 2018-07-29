@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace OOPFinalProject.BL
 {
     [Serializable]
-    public class CircleShape : IListofObjects
+    public class CircleShape : ListofObjects
     {
         public CircleShape(int x, int y, int radius1, int radius2)
         {
