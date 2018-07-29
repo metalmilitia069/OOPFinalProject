@@ -17,41 +17,14 @@ namespace ConsoleApp1
             RectangleShape rect2 = new RectangleShape(0, 0, 25, 25);
             Console.WriteLine($"rectangle created: {rect}");
 
-            List<IListofObjects> listofObjects = new List<IListofObjects>();
-
-            listofObjects.Add(rect);
-            listofObjects.Add(rect1);
-            listofObjects.Add(rect2);
+            
 
             CircleShape circ = new OOPFinalProject.BL.CircleShape(0, 0, 80, 80);
 
-            listofObjects.Add(circ);
-
-            RectangleShape recc = new RectangleShape(0,0,0,0);
-
-            List<RectangleShape> rectangleShapesList = new List<RectangleShape>();
-            foreach (var item in listofObjects)
-            {   
-                if(item is RectangleShape rectan)
-                {
-                    rectangleShapesList.Add(rectan);
-                }
-            }
-            recc = rectangleShapesList.Last();
-            recc.ShowWidthAndHeight();
-
-            //DrawingShapes drawingShapes = new DrawingShapes(circ);
+            
             DrawingShapes drawingShapes1 = new DrawingShapes();
 
-            //foreach(var rec in drawingShapes1.GetListofRectangles)
-            //{
-            //    Console.WriteLine(rec.Height.ToString());
-            //}
-
-            //foreach (var rec in drawingShapes.GetListofCircles)
-            //{
-            //    Console.WriteLine(rec.Radius1.ToString());
-            //}
+            
 
             drawingShapes1.AddToList(rect1);
             rect1 = new RectangleShape(10, 10, 666, 999);
@@ -86,15 +59,17 @@ namespace ConsoleApp1
 
             dataList.SerializeIt();
 
-            dataList.listinha = null;
+            dataList.listOfObjects = null;
 
             Console.WriteLine("lalalala");
 
-            //Console.WriteLine("Antes do Deserialize >>> " + dataList.listinha.ElementAt(0));
+
+
+            //Console.WriteLine("Antes do Deserialize >>> " + dataList.listOfObjects.ElementAt(0));
 
             dataList.DeserializeIt();
 
-            foreach(var item in dataList.listinha)
+            foreach(var item in dataList.listOfObjects)
             {
                 if(item is RectangleShape rec)
                 {
@@ -106,7 +81,17 @@ namespace ConsoleApp1
                 }
             }
 
-            //Console.WriteLine("Depois do Deserialize >>> " + dataList.listinha.ElementAt(0)); 
+            rect2 = new RectangleShape(0, 0, 2222, 2222);
+
+            drawingShapes1.AddToList(rect2);
+            dataList = new DataList(drawingShapes1);
+
+            dataList.SerializeIt();
+
+
+
+
+            //Console.WriteLine("Depois do Deserialize >>> " + dataList.listOfObjects.ElementAt(0)); 
 
             //Console.WriteLine($"The Rectangle info is: {rect2.X}, {rect2.Y}, {rect2.Width}, {rect2.Height}");
 

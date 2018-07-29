@@ -16,14 +16,15 @@ namespace OOPFinalProject.BL
         private List<RectangleShape> listofRec = new List<RectangleShape>();
         private List<CircleShape> listofCirc = new List<CircleShape>();
         Graphics g;
-        IListofObjects ObjectToDraw;
+
+        ListofObjects ObjectToDraw;
 
         public DrawingShapes()
         {
             
         }
 
-        public void AddToList(IListofObjects objects)
+        public void AddToList(ListofObjects objects)
         {
             if (objects is RectangleShape rec)
             {
@@ -42,14 +43,11 @@ namespace OOPFinalProject.BL
             {
                 g.DrawRectangle(Pens.Black, rec.X, rec.Y, rec.Width, rec.Height);
                 g.FillRectangle(Brushes.Violet, rec.X, rec.Y, rec.Width, rec.Height);
-                //listofRec.Add(rec);
             }
             if (ObjectToDraw is CircleShape circ)
             {
                 g.DrawEllipse(Pens.Black, circ.X, circ.Y, circ.Radius1, circ.Radius2);
                 g.FillEllipse(Brushes.Blue, circ.X, circ.Y, circ.Radius1, circ.Radius2);
-                
-                //listofCirc.Add(circ);
             }
         }
 
@@ -64,10 +62,5 @@ namespace OOPFinalProject.BL
             get { return listofCirc; }
             set { listofCirc = value; }
         }
-
-       
-
-
-
     }
 }

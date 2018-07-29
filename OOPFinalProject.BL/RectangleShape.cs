@@ -56,21 +56,9 @@ namespace OOPFinalProject.BL
             get { return _height; }
             set { _height = value; }
         }
-
-
-
-        List<IListofObjects> listofShapes = new List<IListofObjects>();
-
-        RectangleShape rect1;
-
-        public void AddToListofShapes(RectangleShape rec)
-        {
-            listofShapes.Add(rect1);
-        }
-
-        public void ShowWidthAndHeight()
-        {
-            Console.WriteLine("mozo" + this.Width + this.Height);
-        }
+        //public void ShowWidthAndHeight()
+        //{
+        //    Console.WriteLine("mozo" + this.Width + this.Height);
+        //}
     }
 }

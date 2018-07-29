@@ -16,7 +16,6 @@ namespace OOPFinalProject.BL
             Y = y;
             Radius1 = radius1;
             Radius2 = radius2;
-           // Rectangle rect = new Rectangle(x, y, width, height);
         }
 
         public CircleShape()
@@ -56,22 +55,9 @@ namespace OOPFinalProject.BL
             set { _radius2 = value; }
         }
 
-
-
-
-
-        List<IListofObjects> listofShapes = new List<IListofObjects>();
-
-        RectangleShape rect1;
-
-        public void AddToListofShapes(RectangleShape rec)
-        {
-            listofShapes.Add(rect1);
-        }
-
-        public void ShowWidthAndHeight()
-        {
-            Console.WriteLine("mozo" + this.Radius1.ToString());
-        }
+        //public void ShowWidthAndHeight()
+        //{
+        //    Console.WriteLine("mozo" + this.Radius1.ToString());
+        //}
     }
 }

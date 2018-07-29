@@ -10,7 +10,7 @@ namespace OOPFinalProject.BL
     [XmlInclude(typeof(RectangleShape))]
     [XmlInclude(typeof(CircleShape))]
     [Serializable]
-    public abstract class ListofObjects : IListofObjects
+    public abstract class ListofObjects// : IListofObjects
     {
 
     }
