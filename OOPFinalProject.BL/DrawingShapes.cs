@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 
 namespace OOPFinalProject.BL
@@ -15,7 +16,8 @@ namespace OOPFinalProject.BL
     {
         private List<RectangleShape> listofRec = new List<RectangleShape>();
         private List<CircleShape> listofCirc = new List<CircleShape>();
-        Graphics g;
+        //Graphics g;
+        //PaintEventArgs g;
 
         ListofObjects ObjectToDraw;
 
@@ -37,17 +39,20 @@ namespace OOPFinalProject.BL
             ObjectToDraw = objects;
         }
 
-        public void DrawShape()
+        public void DrawShape(PaintEventArgs g)
         {
             if (ObjectToDraw is RectangleShape rec)
             {
-                g.DrawRectangle(Pens.Black, rec.X, rec.Y, rec.Width, rec.Height);
-                g.FillRectangle(Brushes.Violet, rec.X, rec.Y, rec.Width, rec.Height);
+                //g.Graphics.FillRectangle(new SolidBrush(Color.RoyalBlue), rec.X, rec.Y, rec.Width, rec.Height);
+                //g.Graphics.FillRectangle(new SolidBrush(Color.RoyalBlue), mousePivot);
+                g.Graphics.FillRectangle(Brushes.Violet, rec.X, rec.Y, rec.Width, rec.Height);
+                g.Graphics.DrawRectangle(Pens.Black, rec.X, rec.Y, rec.Width, rec.Height);
+                
             }
             if (ObjectToDraw is CircleShape circ)
             {
-                g.DrawEllipse(Pens.Black, circ.X, circ.Y, circ.Radius1, circ.Radius2);
-                g.FillEllipse(Brushes.Blue, circ.X, circ.Y, circ.Radius1, circ.Radius2);
+                g.Graphics.DrawEllipse(Pens.Black, circ.X, circ.Y, circ.Radius1, circ.Radius2);
+                g.Graphics.FillEllipse(Brushes.Blue, circ.X, circ.Y, circ.Radius1, circ.Radius2);
             }
         }
 
